@@ -183,8 +183,8 @@ body {
     align-items: center;
   }
 
-  .portfolioContainer{
-    justify-content: center;
-    display: flex;
+  .portfolioContainer {
+    grid-template-columns: repeat(2, 1fr); /* changed from 3 to 2 */
+    padding: 0 10px; /* add horizontal padding */
   }
 }
