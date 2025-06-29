@@ -51,10 +51,12 @@ export default function Home() {
           </div>
         </div>
         <div className="white"></div>
-        
+
         <button className="portfolioButton">Portfolio</button>
         <div className="portfolioContainer">
+          <a href= "https://message-generator-nine.vercel.app/">
           <div className="portfolioItem">Affirmation Generator</div>
+          </a>
           <div className="portfolioItem">Portfolio 2</div>
           <div className="portfolioItem">Portfolio 3</div>
         </div>
