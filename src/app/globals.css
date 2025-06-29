@@ -187,4 +187,9 @@ body {
     grid-template-columns: repeat(2, 1fr); /* changed from 3 to 2 */
     padding: 0 10px; /* add horizontal padding */
   }
+
+  .contactContainer {
+    font-size: 0.6rem;
+    margin: -20px 0;
+  }
 }
