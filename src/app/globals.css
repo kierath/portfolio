@@ -1,44 +1,41 @@
-/* ===== Base Layout ===== */
+/* Body */
 body {
   margin: 0;
   background: #f9f4f8;
-  height: 100vh;
   font-family: 'Press Start 2P', cursive;
   color: #5a3e6f;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
+  box-sizing: border-box;
 }
 
-/* ===== Container ===== */
+/* Container Wrapper */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
-  width: 100%;
-  padding: 0 20px;
+  padding: 40px 20px;
+  gap: 40px;
 }
 
-/* ===== Title ===== */
-.titleName {
-  font-size: 2.8rem;
-  color: #a85cae;
-  margin-bottom: 20px;
-  text-shadow: 1px 1px 3px #f3d1f4aa;
-}
-
-/* ===== Layout Row ===== */
+/* Contains About Me */
 .contentRow {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 40px;
-  flex-wrap: wrap;
+  width: 100%;
+  max-width: 900px;
 }
 
-/* ===== Profile Image ===== */
+/* Title */
+.titleName {
+  font-size: 2.4rem;
+  color: #a85cae;
+  text-shadow: 1px 1px 3px #f3d1f4aa;
+  margin-bottom: 5px;
+}
+
+/* Profile Picture */
 .profileImage {
   width: 250px;
   height: 250px;
@@ -53,20 +50,28 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
-  transform: scale(1.5) translateY(-30px);
 }
 
-/* ===== Buttons Layout ===== */
-.buttonContainer {
+/* About Section */
+.aboutContainer {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 900px;
+  overflow: visible;
+  /* to show popup outside container */
+  position: relative;
+  /* for popup absolute positioning */
+  overflow: visible;
 }
 
-/* ===== Buttons ===== */
-.aboutButton,
-.portfolioButton {
+.aboutWrapper {
+  display: inline-flex;
+  position: relative;
+}
+
+/* About Button */
+.aboutButton {
   font-family: 'Press Start 2P', cursive;
   color: #fff;
   background-color: #d299c2;
@@ -78,24 +83,103 @@ body {
   user-select: none;
   box-shadow: 0 4px 8px rgba(210, 153, 194, 0.5);
   transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Vertical text for "About Me" */
-.aboutButton .verticalLetter {
+/* Vertical letters layout */
+.verticalLetter {
   display: block;
   line-height: 1.2;
 }
 
+
+.popupBox {
+  background-color: #fff;
+  color: #5a3e6f;
+  border: 2px solid #d299c2;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  box-shadow: 0 4px 8px rgba(210, 153, 194, 0.3);
+  padding: 10px;
+  margin: 10px;
+  line-height: 20px;
+}
+
+.white {
+  background-color: white;
+  width: 100%;
+  height: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(210, 153, 194, 0.3);
+}
+
+/* Portfolio Button */
+.portfolioButton,
+.contactButton {
+  font-family: 'Press Start 2P', cursive;
+  color: #fff;
+  background-color: #d299c2;
+  border: none;
+  padding: 14px 24px;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 1rem;
+  user-select: none;
+  box-shadow: 0 4px 8px rgba(210, 153, 194, 0.5);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.portfolioContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.portfolioItem {
+  background-color: #f3d1f4;
+  color: #333;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 1rem;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Hover & Focus */
 .aboutButton:hover,
-.portfolioButton:hover {
+.portfolioButton:hover,
+.contactButton:hover,
+.portfolioItem:hover {
   background-color: #b468a9;
   transform: scale(1.05);
   box-shadow: 0 6px 14px rgba(180, 104, 169, 0.7);
 }
 
-.aboutButton:focus,
-.portfolioButton:focus {
-  outline: 3px solid #f7c5f8;
-  outline-offset: 3px;
+.contactContainer {
+  font-size: 0.75rem;
+  margin: -30px 0;
+}
+
+.contactContainer a {
+  text-decoration: none;
+  color: #5a3e6f;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 600px) {
+  .aboutContainer {
+    justify-content: center;
+    /* center on small */
+  }
+
+  .aboutWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
 }
