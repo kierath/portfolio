@@ -182,4 +182,9 @@ body {
     flex-direction: column;
     align-items: center;
   }
+
+  .portfolioContainer{
+    justify-content: center;
+    display: flex;
+  }
 }
