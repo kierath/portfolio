@@ -8,7 +8,7 @@ export default function Home() {
   const aboutMeLetters = "About Me".split("");
 
   const fullText =
-    "Hey, I’m Kierath! I’m a Games Engine Specialist, and lately I’ve been exploring full stack development because I really enjoy coding and building things. I’m excited to keep learning and take on more projects that inspire me.";
+    "Hey, I’m Kierath! I’ve been exploring full stack development because I really enjoy coding and building things. I’m excited to keep learning and take on more projects that inspire me.";
 
   useEffect(() => {
 
