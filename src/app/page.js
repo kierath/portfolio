@@ -58,7 +58,12 @@ export default function Home() {
           <a href= "https://message-generator-nine.vercel.app/">
           <div className="portfolioItem">Affirmation Generator</div>
           </a>
-          <div className="portfolioItem">Portfolio 2</div>
+
+          <a href= "https://spotifyproject-henna.vercel.app/">
+          <div className="portfolioItem">Spotify API</div>
+          </a>
+
+
           <div className="portfolioItem">Portfolio 3</div>
         </div>
         <div className="white"></div>
