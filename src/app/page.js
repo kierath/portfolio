@@ -8,7 +8,7 @@ export default function Home() {
   const aboutMeLetters = "About Me".split("");
 
   const fullText =
-    "Hey, I’m Kierath! I’ve been exploring full stack development because I really enjoy coding and building things. I’m excited to keep learning and take on more projects that inspire me.";
+    "Hey, I’m Kierath! I’m a full stack development enthusiast who loves turning ideas into interactive web apps. I work with React, Node.js, Express, and PostgreSQL, and I’ve built projects like a Spotify-powered playlist creator and a random affirmation generator. I’m excited to keep learning, take on challenging projects, and join a collaborative team where I can grow as a developer.";
 
   useEffect(() => {
 
@@ -77,7 +77,7 @@ export default function Home() {
 
         <div className="skills">
           <h3>Tech Skills</h3>
-          <p>React | Node.js | Express | PostgreSQL | Vercel | Tailwind</p>
+          <p>React | Redux | Node.js | Express | PostgreSQL | Vercel | Tailwind</p>
         </div>
 
         <button className="contactButton">Contact Me</button>
