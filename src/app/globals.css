@@ -151,6 +151,13 @@ body {
   align-items: center;
 }
 
+.portfolioDescription {
+  font-size: 0.85rem; /* slightly smaller than normal text */
+  color: #7a5a8c; /* softer gray for better hierarchy */
+  margin-top: 4px;
+}
+
+
 /* Hover & Focus */
 .aboutButton:hover,
 .portfolioButton:hover,
