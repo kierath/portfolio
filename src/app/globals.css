@@ -139,7 +139,7 @@ body {
   max-width: 900px;
 }
 
-.portfolioItem {
+ .portfolioItem {
   background-color: #f3d1f4;
   color: #333;
   text-align: center;
@@ -147,14 +147,19 @@ body {
   font-size: 1rem;
   aspect-ratio: 1 / 1;
   display: flex;
+  flex-direction: column; 
   justify-content: center;
   align-items: center;
+  padding: 10px; 
+  font-weight: bold;
 }
 
+
 .portfolioDescription {
-  font-size: 0.85rem; /* slightly smaller than normal text */
-  color: #7a5a8c; /* softer gray for better hierarchy */
+  font-size: 0.85rem; 
+  color: #7a5a8c; 
   margin-top: 4px;
+  font-weight: normal;
 }
 
 
