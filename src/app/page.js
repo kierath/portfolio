@@ -56,21 +56,21 @@ export default function Home() {
         <button className="portfolioButton">Portfolio</button>
         <div className="portfolioContainer">
 
-          //PORTFOLIO 1 - AFFIRMATION GENERATOR
+          {/*PORTFOLIO 1 - AFFIRMATION GENERATOR*/}
           <a href= "https://message-generator-nine.vercel.app/">
           <div className="portfolioItem">Affirmation Generator
             <p className="portfolioDescription">React-based app that fetches random affirmations, built with CSS grid.</p>
           </div>
           </a>
           
-          //PORTFOLIO 2 - SPOTIFY API
+           {/*PORTFOLIO 2 - SPOTIFY API*/}
           <a href= "https://spotifyproject-henna.vercel.app/">
           <div className="portfolioItem">Spotify API
             <p className="portfolioDescription">Uses Spotify’s Web API to create playlists, search, add and remove songs.</p>
           </div>
           </a>
 
-          //PORTFOLIO 3 - BLANK
+          {/*PORTFOLIO 3 - BLANK*/}
           <div className="portfolioItem">Portfolio 3</div>
         </div>
         <div className="white"></div>
