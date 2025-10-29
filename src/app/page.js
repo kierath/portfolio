@@ -6,7 +6,7 @@ export default function Home() {
   const [typedText, setTypedText] = useState("");
 
   const fullText =
-    "Hey, I’m Kierath! I’m a full stack development enthusiast who loves turning ideas into interactive web apps. I work with React, Node.js, Express, and PostgreSQL, and I’ve built projects like a Spotify-powered playlist creator and a random affirmation generator. I’m excited to keep learning, take on challenging projects, and join a collaborative team where I can grow as a developer.";
+    "Hi, I’m Kierath, a full-stack developer passionate about building clean, functional web applications. I specialize in React, Node.js, Express, and PostgreSQL, and I enjoy creating intuitive, user-friendly interfaces.";
 
   useEffect(() => {
     let index = 0;
@@ -22,28 +22,28 @@ export default function Home() {
   const portfolioItems = [
     {
       title: "Affirmation Generator",
-      description: "React app fetching random affirmations with a sleek UI.",
+      description: "React app fetching random affirmations with a simple interface.",
       link: "https://message-generator-nine.vercel.app/",
       github: "https://github.com/kierath/affirmation-generator",
       image: "/images/affirmation.png",
     },
     {
       title: "Spotify Playlist Creator",
-      description: "Interact with Spotify API to create playlists.",
+      description: "Interact with Spotify API to create playlists effortlessly.",
       link: "https://spotifyproject-henna.vercel.app/",
       github: "https://github.com/kierath/spotify-api-project",
       image: "/images/spotify.png",
     },
     {
       title: "Coming Soon",
-      description: "Stay tuned for my next UI-focused project!",
+      description: "Next clean and modern UI-focused project.",
       link: "#",
       github: "#",
       image: "/images/coming-soon.png",
     },
   ];
 
-  const skills = ["React", "Redux", "Node.js", "Express", "PostgreSQL", "Vercel", "Tailwind"];
+  const skills = ["React", "Redux", "Node.js", "Express", "PostgreSQL", "Tailwind"];
 
   return (
     <div className="container">
@@ -56,37 +56,34 @@ export default function Home() {
         <img src="/images/kierath.jpg" alt="Kierath" />
       </div>
 
-      {/* About Me Card */}
+      {/* About Me */}
       <div className="aboutWrapper">
-        <button className="aboutButton">About Me</button>
-        <div className="popupBox glassCard">
+        <div className="aboutCard">
           <p>{typedText}</p>
         </div>
       </div>
 
-      <div className="white"></div>
+      <div className="sectionDivider"></div>
 
       {/* Portfolio Section */}
-      <button className="portfolioButton">Portfolio</button>
+      <h2 className="sectionTitle">Portfolio</h2>
       <div className="portfolioContainer">
         {portfolioItems.map((item, i) => (
           <a key={i} href={item.link} target="_blank" className="portfolioItem">
-            <div className="portfolioImageWrapper">
-              <img src={item.image} alt={item.title} className="portfolioImage" />
-              <div className="portfolioOverlay">
-                <p className="portfolioDescription">{item.description}</p>
-              </div>
+            <img src={item.image} alt={item.title} className="portfolioImage" />
+            <div className="portfolioContent">
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
             </div>
-            <h3>{item.title}</h3>
           </a>
         ))}
       </div>
 
-      <div className="white"></div>
+      <div className="sectionDivider"></div>
 
-      {/* Skills Section */}
+      {/* Skills */}
       <div className="skills">
-        <h3>Tech Skills</h3>
+        <h2 className="sectionTitle">Tech Skills</h2>
         <div className="skillsList">
           {skills.map((skill, i) => (
             <span key={i} className="skillBadge">{skill}</span>
@@ -94,9 +91,11 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Contact Section */}
-      <button className="contactButton">Contact Me</button>
+      <div className="sectionDivider"></div>
+
+      {/* Contact */}
       <div className="contactContainer">
+        <h2 className="sectionTitle">Contact</h2>
         <p>Email: kierath_dhugga@hotmail.co.uk</p>
         <p>Mobile: 07415242850</p>
         <p>GitHub: <a href="https://github.com/kierath" target="_blank">kierath</a></p>
