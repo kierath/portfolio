@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import "./global.css";
 
 export default function Home() {
   const [typedText, setTypedText] = useState("");
