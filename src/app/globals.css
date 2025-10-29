@@ -1,4 +1,4 @@
-/* General Reset */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #f9f9f9;
+  background: #f9f9f9;
   color: #333;
   line-height: 1.6;
 }
@@ -19,7 +19,22 @@ body {
   padding: 0 1rem;
 }
 
-/* Hero Section */
+/* Fade-in sections */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -43,9 +58,8 @@ body {
   max-width: 800px;
 }
 
-/* About Section */
+/* About */
 .about {
-  background: #fff;
   text-align: center;
   padding: 6rem 2rem;
 }
@@ -62,9 +76,8 @@ body {
   font-size: 1.2rem;
 }
 
-/* Skills Section */
+/* Skills Bubble Cloud */
 .skills {
-  background: #f9f9f9;
   text-align: center;
   padding: 6rem 2rem;
 }
@@ -72,34 +85,35 @@ body {
 .skills h2 {
   font-size: 2.5rem;
   color: #4f46e5;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
-.skills-list {
+.skills-bubble-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
+  position: relative;
 }
 
-.skill-badge {
-  background-color: #4f46e5;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 9999px;
+.skill-bubble {
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
   font-weight: 500;
-  transition: transform 0.3s ease, background 0.3s ease;
   cursor: default;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 }
 
-.skill-badge:hover {
-  transform: scale(1.05);
-  background-color: #3730a3;
+.skill-bubble:hover {
+  transform: translateY(-8px) scale(1.1) rotate(-2deg);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.2);
 }
 
-/* Portfolio Section */
+/* Portfolio */
 .portfolio {
-  background: #fff;
   text-align: center;
   padding: 6rem 2rem;
 }
@@ -112,62 +126,66 @@ body {
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
 }
 
 .portfolio-item {
   position: relative;
-  overflow: hidden;
   border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-  text-decoration: none;
-  color: inherit;
-}
-
-.portfolio-item img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .portfolio-item:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.portfolio-image-wrapper img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
 }
 
 .portfolio-overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0,0,0,0.45);
+  background-color: rgba(0,0,0,0.6);
   opacity: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
-  transition: opacity 0.3s ease;
-  padding: 1rem;
   text-align: center;
+  padding: 1rem;
+  transition: opacity 0.3s ease;
 }
 
 .portfolio-item:hover .portfolio-overlay {
   opacity: 1;
 }
 
-.github-link {
-  margin-top: 1rem;
+.portfolio-overlay h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
   color: #a78bfa;
+}
+
+.portfolio-overlay p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.github-link {
+  color: #fff;
   text-decoration: underline;
 }
 
-.github-link:hover {
-  color: #fff;
-}
-
-/* Contact Section */
+/* Contact */
 .contact {
-  background: #f9f9f9;
   text-align: center;
   padding: 6rem 2rem;
 }
@@ -203,5 +221,9 @@ footer {
 
   .hero p {
     font-size: 1.2rem;
+  }
+
+  .skills-bubble-container {
+    gap: 1rem;
   }
 }

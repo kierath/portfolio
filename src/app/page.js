@@ -1,23 +1,15 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import "./global.css";
 
 export default function Home() {
   const [typedText, setTypedText] = useState("");
 
   const fullText =
-    "Hi, I’m Kierath Dhugga, a full-stack developer passionate about crafting clean, modern user interfaces. I specialize in React, Node.js, and Tailwind CSS.";
+    "Hi, I’m Kierath Dhugga, a full-stack developer passionate about crafting modern, elegant user interfaces. I specialize in React, Node.js, and Tailwind CSS.";
 
-  useEffect(() => {
-    let index = 0;
-    const interval = setInterval(() => {
-      if (index < fullText.length) {
-        setTypedText((prev) => prev + fullText[index]);
-        index++;
-      } else clearInterval(interval);
-    }, 25);
-    return () => clearInterval(interval);
-  }, []);
+  const skills = ["React", "Redux", "Node.js", "Express", "PostgreSQL", "Tailwind", "Figma"];
 
   const portfolioItems = [
     {
@@ -43,46 +35,58 @@ export default function Home() {
     },
   ];
 
-  const skills = ["React", "Redux", "Node.js", "Express", "PostgreSQL", "Tailwind", "Figma"];
+  // Typing effect
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      if (index < fullText.length) {
+        setTypedText((prev) => prev + fullText[index]);
+        index++;
+      } else clearInterval(interval);
+    }, 25);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="container">
       {/* Hero */}
-      <section className="hero">
+      <section id="hero" className="hero fade-in">
         <h1>Kierath Dhugga</h1>
         <p>{typedText}</p>
       </section>
 
       {/* About */}
-      <section className="about">
+      <section id="about" className="about fade-in">
         <h2>About Me</h2>
         <p>
-          I create modern web applications that balance functionality and aesthetics. I love turning
-          complex problems into elegant, user-friendly solutions.
+          I craft modern web applications that balance functionality and aesthetics. I love turning
+          complex problems into intuitive, user-friendly solutions that delight users.
         </p>
       </section>
 
-      {/* Skills */}
-      <section className="skills">
+      {/* Skills Bubble Cloud */}
+      <section id="skills" className="skills fade-in">
         <h2>Tech Skills</h2>
-        <div className="skills-list">
+        <div className="skills-bubble-container">
           {skills.map((skill, i) => (
-            <div key={i} className="skill-badge">{skill}</div>
+            <div key={i} className="skill-bubble">{skill}</div>
           ))}
         </div>
       </section>
 
       {/* Portfolio */}
-      <section className="portfolio">
+      <section id="portfolio" className="portfolio fade-in">
         <h2>Portfolio</h2>
         <div className="portfolio-grid">
           {portfolioItems.map((item, i) => (
             <a key={i} href={item.link} target="_blank" className="portfolio-item">
-              <img src={item.image} alt={item.title} />
-              <div className="portfolio-overlay">
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-                <a href={item.github} target="_blank" className="github-link">View Code</a>
+              <div className="portfolio-image-wrapper">
+                <img src={item.image} alt={item.title} />
+                <div className="portfolio-overlay">
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                  <a href={item.github} target="_blank" className="github-link">View Code</a>
+                </div>
               </div>
             </a>
           ))}
@@ -90,7 +94,7 @@ export default function Home() {
       </section>
 
       {/* Contact */}
-      <section className="contact">
+      <section id="contact" className="contact fade-in">
         <h2>Contact</h2>
         <p>Email: <a href="mailto:kierath_dhugga@hotmail.co.uk">kierath_dhugga@hotmail.co.uk</a></p>
         <p>Mobile: 07415242850</p>
