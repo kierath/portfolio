@@ -1,160 +1,207 @@
-/* ---------- Body ---------- */
-body {
+/* General Reset */
+* {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #f5f5f5;
-  color: #1a1a1a;
-  text-align: center;
+  padding: 0;
   box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
-/* ---------- Container ---------- */
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 60px 20px;
-  gap: 60px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* ---------- Title ---------- */
-.titleName {
-  font-size: 2.8rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #111;
-}
-
-/* ---------- Profile ---------- */
-.profileImage {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-.profileImage:hover {
-  transform: scale(1.05);
-}
-.profileImage img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* ---------- About Card ---------- */
-.aboutWrapper {
-  max-width: 700px;
-}
-.aboutCard {
-  background: #fff;
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
-  font-size: 1rem;
+body {
+  background-color: #f9f9f9;
+  color: #333;
   line-height: 1.6;
 }
 
-/* ---------- Section Divider ---------- */
-.sectionDivider {
-  width: 60px;
-  height: 4px;
-  background-color: #6c63ff;
-  border-radius: 2px;
-  margin: 40px 0;
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-/* ---------- Section Title ---------- */
-.sectionTitle {
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-  color: #111;
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #7c3aed, #4f46e5);
+  color: white;
+  text-align: center;
+  padding: 2rem;
 }
 
-/* ---------- Portfolio ---------- */
-.portfolioContainer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  width: 100%;
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
-.portfolioItem {
+
+.hero p {
+  font-size: 1.5rem;
+  max-width: 800px;
+}
+
+/* About Section */
+.about {
   background: #fff;
-  border-radius: 16px;
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  color: #4f46e5;
+  margin-bottom: 2rem;
+}
+
+.about p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+}
+
+/* Skills Section */
+.skills {
+  background: #f9f9f9;
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.skills h2 {
+  font-size: 2.5rem;
+  color: #4f46e5;
+  margin-bottom: 2rem;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.skill-badge {
+  background-color: #4f46e5;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: transform 0.3s ease, background 0.3s ease;
+  cursor: default;
+}
+
+.skill-badge:hover {
+  transform: scale(1.05);
+  background-color: #3730a3;
+}
+
+/* Portfolio Section */
+.portfolio {
+  background: #fff;
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.portfolio h2 {
+  font-size: 2.5rem;
+  color: #4f46e5;
+  margin-bottom: 3rem;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.portfolio-item {
+  position: relative;
   overflow: hidden;
-  text-align: left;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: inherit;
 }
-.portfolioItem:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 32px rgba(0,0,0,0.12);
-}
-.portfolioImage {
+
+.portfolio-item img {
   width: 100%;
   height: 180px;
   object-fit: cover;
 }
-.portfolioContent {
-  padding: 20px;
-}
-.portfolioContent h3 {
-  margin: 0 0 8px 0;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-.portfolioContent p {
-  margin: 0;
-  color: #555;
-  font-size: 0.95rem;
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
 }
 
-/* ---------- Skills ---------- */
-.skillsList {
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.45);
+  opacity: 0;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
-  gap: 12px;
-  margin-top: 10px;
-}
-.skillBadge {
-  background-color: #6c63ff;
-  color: #fff;
-  padding: 6px 16px;
-  border-radius: 12px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: transform 0.3s ease;
-}
-.skillBadge:hover {
-  transform: scale(1.05);
+  align-items: center;
+  color: white;
+  transition: opacity 0.3s ease;
+  padding: 1rem;
+  text-align: center;
 }
 
-/* ---------- Contact ---------- */
-.contactContainer p {
-  margin: 6px 0;
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
 }
-.contactContainer a {
-  color: #6c63ff;
-  text-decoration: none;
-}
-.contactContainer a:hover {
+
+.github-link {
+  margin-top: 1rem;
+  color: #a78bfa;
   text-decoration: underline;
 }
 
-/* ---------- Responsive ---------- */
-@media (max-width: 900px) {
-  .portfolioContainer {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.github-link:hover {
+  color: #fff;
 }
-@media (max-width: 600px) {
-  .portfolioContainer {
-    grid-template-columns: 1fr;
+
+/* Contact Section */
+.contact {
+  background: #f9f9f9;
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  color: #4f46e5;
+  margin-bottom: 2rem;
+}
+
+.contact a {
+  color: #4f46e5;
+  text-decoration: underline;
+}
+
+.contact a:hover {
+  color: #3730a3;
+}
+
+/* Footer */
+footer {
+  background: #4f46e5;
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
   }
 }
