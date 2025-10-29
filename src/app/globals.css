@@ -1,214 +1,237 @@
-/* Body */
+/* ---------- Body & Container ---------- */
 body {
   margin: 0;
-  background: #f9f4f8;
   font-family: 'Press Start 2P', cursive;
+  background: #f9f4f8;
   color: #5a3e6f;
   text-align: center;
   box-sizing: border-box;
 }
 
-/* Container Wrapper */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 40px 20px;
   gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Contains About Me */
-.contentRow {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  width: 100%;
-  max-width: 900px;
-}
-
-/* Title */
+/* ---------- Title & Profile ---------- */
 .titleName {
-  font-size: 2.4rem;
+  font-size: 3rem;
   color: #a85cae;
   text-shadow: 1px 1px 3px #f3d1f4aa;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
-/* Profile Picture */
 .profileImage {
-  width: 250px;
-  height: 250px;
+  width: 280px;
+  height: 280px;
   border-radius: 30%;
   overflow: hidden;
   border: 4px solid #d299c2;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+.profileImage:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 28px rgba(168, 92, 174, 0.6);
+}
 .profileImage img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
-/* About Section */
-.aboutContainer {
-  display: flex;
-  justify-content: flex-start;
-  width: 100%;
-  max-width: 900px;
-  overflow: visible;
-  /* to show popup outside container */
-  position: relative;
-  /* for popup absolute positioning */
-  overflow: visible;
-}
-
+/* ---------- About Me ---------- */
 .aboutWrapper {
-  display: inline-flex;
-  position: relative;
-}
-
-/* About Button */
-.aboutButton {
-  font-family: 'Press Start 2P', cursive;
-  color: #fff;
-  background-color: #d299c2;
-  border: none;
-  padding: 14px 20px;
-  cursor: pointer;
-  border-radius: 20px;
-  font-size: 1rem;
-  user-select: none;
-  box-shadow: 0 4px 8px rgba(210, 153, 194, 0.5);
-  transition: background-color 0.3s ease, transform 0.2s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
-/* Vertical letters layout */
-.verticalLetter {
-  display: block;
-  line-height: 1.2;
-}
-
-
-.popupBox {
-  background-color: #fff;
-  color: #5a3e6f;
-  border: 2px solid #d299c2;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  box-shadow: 0 4px 8px rgba(210, 153, 194, 0.3);
-  padding: 10px;
-  margin: 10px;
-  line-height: 20px;
-}
-
-.white {
-  background-color: white;
-  width: 100%;
-  height: 10px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(210, 153, 194, 0.3);
-}
-
-/* Portfolio Button */
-.portfolioButton,
-.contactButton {
-  font-family: 'Press Start 2P', cursive;
-  color: #fff;
+.aboutButton {
   background-color: #d299c2;
+  color: #fff;
   border: none;
   padding: 14px 24px;
-  cursor: pointer;
-  border-radius: 20px;
+  border-radius: 25px;
   font-size: 1rem;
-  user-select: none;
-  box-shadow: 0 4px 8px rgba(210, 153, 194, 0.5);
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(210, 153, 194, 0.5);
+  transition: all 0.3s ease;
+}
+.aboutButton:hover {
+  transform: scale(1.08);
+  background-color: #b468a9;
+}
+
+.popupBox {
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #5a3e6f;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 10px;
+  max-width: 500px;
+  box-shadow: 0 12px 28px rgba(210, 153, 194, 0.5);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.popupBox:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(210, 153, 194, 0.7);
+}
+.glassCard {
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(12px);
+}
+
+/* ---------- Portfolio ---------- */
+.portfolioButton {
+  background-color: #d299c2;
+  color: #fff;
+  border: none;
+  padding: 16px 28px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 6px 12px rgba(210,153,194,0.5);
+  transition: all 0.3s ease;
+}
+.portfolioButton:hover {
+  background-color: #b468a9;
+  transform: scale(1.08);
 }
 
 .portfolioContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+  gap: 20px;
   width: 100%;
-  max-width: 900px;
+  max-width: 1000px;
 }
 
- .portfolioItem {
-  background-color: #f3d1f4;
-  color: #333;
-  text-align: center;
-  border-radius: 8px;
-  font-size: 1rem;
-  aspect-ratio: 1 / 1;
+.portfolioItem {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(210,153,194,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.portfolioItem:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 28px rgba(180,104,169,0.7);
+}
+
+.portfolioImageWrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.portfolioImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.portfolioItem:hover .portfolioImage {
+  transform: scale(1.1);
+}
+
+.portfolioOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(168,92,174,0.7);
+  color: #fff;
   display: flex;
-  flex-direction: column; 
   justify-content: center;
   align-items: center;
-  padding: 10px; 
-  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 10px;
+  text-align: center;
 }
-
+.portfolioItem:hover .portfolioOverlay {
+  opacity: 1;
+}
 
 .portfolioDescription {
-  font-size: 0.85rem; 
-  color: #7a5a8c; 
-  margin-top: 4px;
-  font-weight: normal;
+  font-size: 0.9rem;
 }
 
-
-/* Hover & Focus */
-.aboutButton:hover,
-.portfolioButton:hover,
-.contactButton:hover,
-.portfolioItem:hover {
-  background-color: #b468a9;
-  transform: scale(1.05);
-  box-shadow: 0 6px 14px rgba(180, 104, 169, 0.7);
+/* ---------- Skills ---------- */
+.skills {
+  text-align: center;
 }
-
-.contactContainer {
-  font-size: 0.75rem;
-  margin: -30px 0;
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
-
-a {
-  text-decoration: none;
+.skillBadge {
+  background-color: #f3d1f4;
   color: #5a3e6f;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+.skillBadge:hover {
+  transform: scale(1.05);
+  background-color: #e8bff0;
 }
 
-/* Responsive for smaller screens */
-@media (max-width: 600px) {
-  .aboutContainer {
-    justify-content: center;
-    margin: 0 0 -10px 0;
-  }
+/* ---------- Contact ---------- */
+.contactButton {
+  background-color: #d299c2;
+  color: #fff;
+  border: none;
+  padding: 16px 28px;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(210,153,194,0.5);
+  transition: all 0.3s ease;
+}
+.contactButton:hover {
+  background-color: #b468a9;
+  transform: scale(1.08);
+}
+.contactContainer {
+  font-size: 0.8rem;
+  margin: -20px 0;
+}
 
-  .aboutButton{
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    margin: 0 0 30px 0;
-  }
+/* ---------- Separator ---------- */
+.white {
+  background-color: white;
+  width: 100%;
+  height: 12px;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(210, 153, 194, 0.3);
+  margin: 20px 0;
+}
 
-  .aboutWrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
   .portfolioContainer {
-    grid-template-columns: repeat(2, 1fr); /* changed from 3 to 2 */
-    padding: 0 10px; /* add horizontal padding */
+    grid-template-columns: repeat(2, 1fr);
   }
-
-  .contactContainer {
-    font-size: 0.6rem;
-    margin: -20px 0;
+}
+@media (max-width: 600px) {
+  .portfolioContainer {
+    grid-template-columns: 1fr;
+  }
+  .skillsList {
+    gap: 5px;
   }
 }
