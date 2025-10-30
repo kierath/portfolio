@@ -72,6 +72,7 @@ export default function Home() {
         <div className="blob purple"></div>
         <div className="blob pink"></div>
         <div className="blob yellow"></div>
+        <div className="blob green"></div>
       </section>
 
       {/* About */}

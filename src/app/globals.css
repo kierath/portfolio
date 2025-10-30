@@ -64,7 +64,7 @@ body {
 .blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
+  filter: blur(40px);
   opacity: 0.6;
   z-index: -1;
 }
@@ -80,7 +80,7 @@ body {
 .blob.pink {
   width: 250px;
   height: 250px;
-  bottom: 50px;
+  bottom: -100px;
   left: 60%;
   background: #f9a8d4;
 }
@@ -93,6 +93,13 @@ body {
   background: #facc15;
 }
 
+.blob.green {
+  width: 250px;
+  height: 250px;
+  top: 1400px;
+  right: 1300px;
+  background: #80f7cb;
+}
 /* Section Bubble Base */
 .section-bubble {
   background-color: #fff;
@@ -214,6 +221,10 @@ p.typed-text {
   border: 3px dashed rgba(99, 102, 241, 0.3);
   background-color: #fff;
 }
+
+a.portfolio-item {
+  text-decoration: none;
+} 
 
 .portfolio-item:hover {
   box-shadow: 0 0 25px rgba(99, 102, 241, 0.4);
