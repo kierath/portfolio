@@ -1,9 +1,11 @@
 /* Global Styles */
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f8f8ff;
   color: #333;
+  box-sizing: border-box;
 }
 
 /* Navbar */
@@ -100,12 +102,14 @@ body {
   right: 1300px;
   background: #80f7cb;
 }
+
 /* Section Bubble Base */
 .section-bubble {
   background-color: #fff;
   border-radius: 20px;
   padding: 20px;
   max-width: 1400px;
+  width: 100%;
   margin: 40px auto;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s;
@@ -224,7 +228,7 @@ p.typed-text {
 
 a.portfolio-item {
   text-decoration: none;
-} 
+}
 
 .portfolio-item:hover {
   box-shadow: 0 0 25px rgba(99, 102, 241, 0.4);
@@ -307,23 +311,83 @@ a.portfolio-item {
 
 /* Responsive Layout */
 @media (max-width: 900px) {
+  .about-content {
+    display: flex;
+    flex-direction: column; /* Stack vertically instead of side by side */
+    align-items: center;    /* Center horizontally */
+    text-align: center;     /* Center the text */
+    gap: 20px;              /* Add some spacing between pic and text */
+  }
+
+  .about-text, 
+  .typed-text {
+    width: 100%;
+    max-width: 600px; /* keeps it readable */
+    order: 2;         /* makes sure it comes AFTER the image */
+  }
+
+  .profile-pic {
+    order: 1;         /* image first */
+    width: 250px;     /* scale down for mobile */
+    height: 250px;
+  }
+}
+
+@media (max-width: 900px) {
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .section-bubble h2 {
+    font-size: 26px;
+  }
+
+  .skill-bubbles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(55px, 1fr));
+    /* smaller base width */
+    gap: 5px;
+    /* tighter spacing */
+    padding: 5px 10px;
+    /* small section padding */
+    justify-items: center;
+  }
+
+  .skill-bubble {
+    width: 61px;
+    height: 30px;
+    font-size: 8px;
+    border-radius: 18px;
+    padding: 0 3px;
+  }
+
   .section-bubble {
     max-width: 90%;
     margin: 20px auto;
     text-align: center;
   }
 
-  .about-content {
-    flex-direction: column;
-    align-items: center;
+  p.about-text {
+    font-size: 14px;
   }
 
-  .skill-bubbles {
-    justify-items: center;
+  .portfolio-item h3 {
+    font-size: 20px;
   }
 
-  .portfolio-grid {
-    flex-direction: column;
-    gap: 20px;
+  .portfolio-item p {
+    font-size: 16px;
+  }
+
+  .contact-bubble h4 {
+    font-size: 14px;
   }
 }
