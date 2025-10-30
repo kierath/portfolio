@@ -4,8 +4,13 @@ import React, { useState, useEffect } from "react";
 
 export default function Home() {
   const [typedText, setTypedText] = useState("");
-
+  const [selectedImage, setSelectedImage] = useState(null);
   const fullText = "UI & Frontend Developer chasing perfection, one pixel at a time.";
+  const figmaImages = [
+    "/images/FigmaHome.png",
+    "/images/FigmaMenu.png",
+    "/images/FigmaOrder.png",
+  ];
 
   const skills = [
     "React", "Next.js", "Tailwind", "Figma", "Node.js", "Express",
@@ -35,6 +40,9 @@ export default function Home() {
       image: "/images/affirmation.png",
     }
   ];
+
+  const openModal = (img) => setSelectedImage(img);
+  const closeModal = () => setSelectedImage(null);
 
   useEffect(() => {
     let index = 0;
@@ -96,23 +104,37 @@ export default function Home() {
           {portfolioItems.map((item, i) => (
             <a key={i} href={item.link} target="_blank" rel="noopener noreferrer" className="portfolio-item">
               <img src={item.image} alt={item.title} className="portfolio-image" />
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
             </a>
           ))}
         </div>
       </section>
 
-          {/* Figma */}
+      {/* Figma */}
       <section className="section-bubble portfolio-bubble">
-        <h2>Figma</h2>
-        <div className="figma-images">
-          <img src = "/images/figmahome.png"/>
-          <img src = "/images/figmamenu.png"/>
+        <h2>Figma Designs</h2>
+        <div className="figma-grid">
+          {figmaImages.map((img, i) => (
+            <img
+              key={i}
+              src={img}
+              alt={`Figma Design ${i + 1}`}
+              onClick={() => openModal(img)}
+              className="figma-thumb"
+            />
+          ))}
         </div>
       </section>
 
-            {/* Contact */}
+      {selectedImage && (
+        <div className="modal" onClick={closeModal}>
+          <span className="close">&times;</span>
+          <img className="modal-content" src={selectedImage} alt="Figma Design" />
+        </div>
+      )}
+
+      {/* Contact */}
       <section className="section-bubble contact-bubble left-align">
         <h2>Contact Me</h2>
         <div className="contact-bubbles">

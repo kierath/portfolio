@@ -38,8 +38,6 @@ body {
   color: #6366f1;
 }
 
-
-
 /* Hero Section */
 .hero {
   position: relative;
@@ -100,18 +98,17 @@ body {
   background-color: #fff;
   border-radius: 20px;
   padding: 20px;
-  max-width: 1300px;
+  max-width: 1400px;
   margin: 40px auto;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s;
   border: 3px dashed rgba(99, 102, 241, 0.3);
 }
 
-
 .section-bubble h2 {
   color: #6366f1;
   font-size: 36px;
-  margin: 0 0px 20px 0;
+  margin-bottom: 20px;
 }
 
 /* Left and Right Alignment */
@@ -135,11 +132,11 @@ body {
 
 .profile-pic {
   width: 320px;
-  border-radius: 15px;
   height: 320px;
+  border-radius: 15px;
   object-fit: cover;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   object-position: center top;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 .about-text {
@@ -159,6 +156,7 @@ p.typed-text {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 15px;
+  justify-items: center;
 }
 
 .skill-bubble {
@@ -173,11 +171,9 @@ p.typed-text {
   font-weight: 500;
   background: linear-gradient(135deg, #6366f1, #a78bfa);
   box-shadow: 0 5px 15px rgba(99, 102, 241, 0.2);
-  cursor: default;
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
 }
-
 
 .skill-bubble:hover {
   transform: scale(1.05);
@@ -185,13 +181,6 @@ p.typed-text {
 }
 
 /* Portfolio Section */
-.portfolio-bubble a {
-  text-decoration: none;
-  color: inherit;
-  transition: color 0.3s;
-}
-
-
 .portfolio-bubble {
   background-color: #fff;
   border-radius: 20px;
@@ -203,10 +192,8 @@ p.typed-text {
 }
 
 .portfolio-bubble h2 {
-  color: #6366f1;
-  font-size: 36px;
-  margin-bottom: 30px;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 /* Portfolio Grid */
@@ -215,20 +202,21 @@ p.typed-text {
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
-  width: 100%;
 }
 
 .portfolio-item {
-  background-color: #fff;
+  width: 350px;
+  text-align: center;
   border-radius: 20px;
+  overflow: hidden;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-  overflow: hidden;
-  width: 350px;
-  text-decoration: none;
   border: 3px dashed rgba(99, 102, 241, 0.3);
-  
+  background-color: #fff;
+}
+
+.portfolio-item:hover {
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.4);
 }
 
 .portfolio-image {
@@ -250,34 +238,61 @@ p.typed-text {
   color: #6366f1;
 }
 
-.portfolio-item:hover {
-  box-shadow: 0 0 25px rgba(99,102,241,0.4);
+/* Figma Grid */
+.figma-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
 
-.figma-images {
-  max-width: 100%;
-  width: 1500px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.figma-images img {
+.figma-thumb {
   width: 100%;
-  height: auto;
-  margin-bottom: 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.figma-thumb:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* Modal */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
   border-radius: 15px;
 }
 
-.contact-bubble h4{
+.close {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/* Contact */
+.contact-bubble h4 {
   color: black;
   font-size: 18px;
   font-weight: 500;
-  margin: 0 0px 20px 0;
+  margin-bottom: 20px;
 }
-
-
 
 /* Responsive Layout */
 @media (max-width: 900px) {
@@ -293,11 +308,11 @@ p.typed-text {
   }
 
   .skill-bubbles {
-    justify-content: center;
+    justify-items: center;
   }
 
   .portfolio-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 20px;
   }
 }
