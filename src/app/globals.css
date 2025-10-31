@@ -313,22 +313,22 @@ a.portfolio-item {
 @media (max-width: 900px) {
   .about-content {
     display: flex;
-    flex-direction: column; /* Stack vertically instead of side by side */
-    align-items: center;    /* Center horizontally */
-    text-align: center;     /* Center the text */
-    gap: 20px;              /* Add some spacing between pic and text */
+    flex-direction: column; 
+    align-items: center;    
+    text-align: center;     
+    gap: 20px;              
   }
 
   .about-text, 
   .typed-text {
     width: 100%;
-    max-width: 600px; /* keeps it readable */
-    order: 2;         /* makes sure it comes AFTER the image */
+    max-width: 600px; 
+    order: 2;         
   }
 
   .profile-pic {
-    order: 1;         /* image first */
-    width: 250px;     /* scale down for mobile */
+    order: 1;        
+    width: 250px;     
     height: 250px;
   }
 }
@@ -353,11 +353,8 @@ a.portfolio-item {
   .skill-bubbles {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(55px, 1fr));
-    /* smaller base width */
     gap: 5px;
-    /* tighter spacing */
     padding: 5px 10px;
-    /* small section padding */
     justify-items: center;
   }
 

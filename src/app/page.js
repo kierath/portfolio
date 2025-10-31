@@ -81,11 +81,11 @@ export default function Home() {
         <div className="about-content">
           <img src="/images/kierath.jpg" alt="Profile" className="profile-pic" />
           <p className="about-text">
-            Hi, I’m Kierath Dhugga, a Game Engine Specialist transitioning into Frontend Development. Over the past two years, I’ve specialised in maintaining AAA game builds, troubleshooting complex technical issues, and optimising performance for demanding environments. This experience sharpened my problem-solving skills, attention to detail, and ability to work efficiently under pressure—skills I’m now applying to web development.
+            Hi, I’m Kierath Dhugga, a Game Engine Specialist transitioning into UI & Frontend Development. Over the past two years, I’ve specialised in maintaining AAA game builds, troubleshooting complex technical issues, and optimising performance for demanding environments. This experience sharpened my problem-solving skills, attention to detail, and ability to work efficiently under pressure—skills I’m now applying to web development.
             <br></br><br></br>
             I’m currently completing a full-stack development course with CodeAcademy, learning HTML, CSS, JavaScript, React, and Next.js, and expanding my abilities to build intuitive, user-focused digital experiences. While my background is in game engines, I’m passionate about applying my technical expertise and creativity to frontend development and UI design, creating interfaces that are smooth, functional, and visually engaging.
             <br></br><br></br>
-            Outside of coding, I enjoy digital art, painting in Procreate, swimming, and competitive gaming. These activities fuel my creativity and curiosity, helping me bring fresh ideas and perspectives to every project I work on. I’m excited to continue learning, growing, and building meaningful digital experiences beyond games.
+            Outside of coding, I enjoy swimming, gym, painting in Procreate, and competitive gaming. These activities fuel my creativity and curiosity, helping me bring fresh ideas and perspectives to every project I work on. I’m excited to continue learning, growing, and building meaningful digital experiences beyond games.
           </p>
         </div>
       </section>
